@@ -5,10 +5,11 @@ namespace NTCDev\User\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use NTCDev\Core\Traits\BaseModelTrait;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, BaseModelTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +17,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'avatar',
+        'status',
+        'email',
+        'password',
     ];
 
     /**
@@ -36,4 +41,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function profile()
+    {
+        return $this->hasOne(UserProfile::class, 'user_id', 'id');
+    }
 }
