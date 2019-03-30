@@ -1,0 +1,29 @@
+{
+    "name": "ntcdev/user",
+    "version": "1.0",
+    "license": "ntcdev",
+    "description": "This is user package",
+    "authors": [
+        {
+            "name": "ntcdev",
+            "email": "thachcanhnhat@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "ultraware/roles": "^5.5",
+        "ntcdev/core": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "NTCDev\\User\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NTCDev\\User\\App\\Providers\\UserServiceProvider"
+            ]
+        }
+    }
+}
