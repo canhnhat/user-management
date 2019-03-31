@@ -6,10 +6,11 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use NTCDev\Core\Traits\BaseModelTrait;
+use Prettus\Repository\Traits\TransformableTrait;
 
 class User extends Authenticatable
 {
-    use Notifiable, BaseModelTrait;
+    use Notifiable, BaseModelTrait, TransformableTrait;
 
     /**
      * The attributes that are mass assignable.

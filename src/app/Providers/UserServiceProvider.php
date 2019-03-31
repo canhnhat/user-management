@@ -13,7 +13,9 @@ class UserServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
+        $src_path = realpath(__DIR__ . '/../../');
+        $config_path = realpath($src_path . '/configs');
+        $this->mergeConfigFrom(realpath("$config_path/roles.php"), 'config');
     }
 
     /**
