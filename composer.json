@@ -1,7 +1,6 @@
 {
     "name": "ntcdev/user",
     "version": "1.0.7",
-    "license": "ntcdev",
     "description": "This is user package",
     "authors": [
         {
